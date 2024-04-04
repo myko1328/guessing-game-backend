@@ -5,7 +5,11 @@ import {
   WebSocketServer,
 } from '@nestjs/websockets';
 
-@WebSocketGateway(8001, { cors: '*' })
+@WebSocketGateway({ cors: '*' })
+
+// @WebSocketGateway(8001, {
+//   cors: { origin: 'https://guessing-game-frontend.onrender.com' },
+// })
 export class ChatGateway {
   @WebSocketServer()
   server;
